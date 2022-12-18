@@ -1,11 +1,14 @@
 #pragma once
 #include <Python.h>
 #include "numpy/arrayobject.h"
+#include "numpy/experimental_dtype_api.h"
 
 typedef struct
 {
     PyArray_Descr base;
     PyObject *units;
-} UnitsObject;
+} Units_dtypeObject;
 
-UnitsObject *new_units(PyObject *units);
+extern PyArray_DTypeMeta Units_dtype;
+Units_dtypeObject *instantiate_Units(PyObject *units);
+int initialize_Units(void);

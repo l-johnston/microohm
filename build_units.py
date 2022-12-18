@@ -1,6 +1,7 @@
 """Build `units` C-extension module"""
 from setuptools import Extension
 from setuptools.command.build_py import build_py as _build_py
+import numpy as np
 
 # pylint:disable=missing-class-docstring
 class build_py(_build_py):
@@ -13,5 +14,9 @@ class build_py(_build_py):
         if self.distribution.ext_modules is None:
             self.distribution.ext_modules = []
         self.distribution.ext_modules.append(
-            Extension("microohm.units", sources=["microohm/units.c"])
+            Extension(
+                "microohm.units",
+                sources=["microohm/units.c"],
+                extra_compile_args=[f"-I{np.get_include()}"],
+            )
         )
