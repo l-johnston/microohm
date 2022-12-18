@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "microohm"
+dynamic = ["version"]
+description = "SI Unit system in Numpy"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy"
+]
+authors = [{name = "Lee Johnston", email = "lee.johnston.100@gmail.com"}]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "pylint",
+    "pytest"
+]
+
+[tool.setuptools]
+py-modules = ["build_units"]
+
+[tool.setuptools.cmdclass]
+build_py = "build_units.build_py"
+
+[tool.setuptools_scm]
+
+[tool.black]
+line-length = 100
+
+[tool.pylint]
+disable = "invalid-name"
+ignore-patterns = "test_*"
