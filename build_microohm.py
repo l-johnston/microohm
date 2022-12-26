@@ -15,8 +15,22 @@ class build_py(_build_py):
             self.distribution.ext_modules = []
         self.distribution.ext_modules.append(
             Extension(
-                "microohm.units",
-                sources=["microohm/units.c"],
+                "microohm.quantitydtype",
+                sources=[
+                    "microohm/quantitydtype.c",
+                    "microohm/casts.c",
+                    "microohm/multiply.c",
+                    "microohm/divide.c",
+                    "microohm/add.c",
+                    "microohm/subtract.c",
+                    "microohm/negative.c",
+                    "microohm/absolute.c",
+                    "microohm/greater.c",
+                    "microohm/less.c",
+                    "microohm/maximum.c",
+                    "microohm/minimum.c",
+                    "microohm/quantitydtype_module.c",
+                ],
                 extra_compile_args=[f"-I{np.get_include()}"],
             )
         )

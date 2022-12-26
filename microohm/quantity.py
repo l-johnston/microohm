@@ -168,3 +168,31 @@ class Quantity:
                 raise ValueError(f"{other!r} not of same dimension as {self!r}")
             return Quantity(self._value - other._value, self._factors)
         return NotImplemented
+
+    def __gt__(self, other):
+        if isinstance(other, Quantity):
+            if not self._factors.is_same_dimension(other._factors):
+                raise ValueError(f"{other!r} not of same dimension as {self!r}")
+            return self._value > other._value
+        return NotImplemented
+
+    def __lt__(self, other):
+        if isinstance(other, Quantity):
+            if not self._factors.is_same_dimension(other._factors):
+                raise ValueError(f"{other!r} not of same dimension as {self!r}")
+            return self._value < other._value
+        return NotImplemented
+
+    def __ge__(self, other):
+        if isinstance(other, Quantity):
+            if not self._factors.is_same_dimension(other._factors):
+                raise ValueError(f"{other!r} not of same dimension as {self!r}")
+            return self._value >= other._value
+        return NotImplemented
+
+    def __le__(self, other):
+        if isinstance(other, Quantity):
+            if not self._factors.is_same_dimension(other._factors):
+                raise ValueError(f"{other!r} not of same dimension as {self!r}")
+            return self._value <= other._value
+        return NotImplemented
