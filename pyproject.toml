@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools", "setuptools-scm", "numpy"]
+requires = ["setuptools>=65.6.3", "setuptools-scm", "numpy>=1.24.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -9,7 +9,7 @@ description = "SI Unit system in Numpy"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "numpy"
+    "numpy>=1.24.0"
 ]
 authors = [{name = "Lee Johnston", email = "lee.johnston.100@gmail.com"}]
 
