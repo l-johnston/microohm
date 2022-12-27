@@ -64,7 +64,7 @@ This approach solves the cross-library incompatibility problem.
 ```
 
 ## Developer workflow
-The `QuantityDType` has to be implemented using the Numpy C-API and compiled as a C-extension module. The following flow works on Ubuntu 22.04.
+The `QuantityDType` has to be implemented using the Numpy C-API and compiled as a C-extension module. The following flow works on Ubuntu 22.04; other platforms may work, but haven't been tested.
 
 ```bash
 $ git clone git@github.com:l-johnston/microohm.git
