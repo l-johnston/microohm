@@ -70,7 +70,8 @@ The `QuantityDType` has to be implemented using the Numpy C-API and compiled as 
 $ git clone git@github.com:l-johnston/microohm.git
 $ cd microohm
 $ python -m venv .venv
-$ python -m pip install -U pip
-$ pip install -U setuptools
-$ pip install -e .[dev]
+$ source .venv/bin/activate
+(.venv) $ python -m pip install -U pip
+(.venv) $ pip install -U setuptools
+(.venv) $ pip install -e .[dev]
 ```
